@@ -1,9 +1,14 @@
 <script>
     import {data} from '../../store';
+    
     /**
    * @type {string}
    */
-    let result,charDesc;
+    let result
+    /**
+   * @type {string}
+   */
+    let charDesc;
     console.log("asdf");
     console.log($data);
     switch($data){
@@ -74,3 +79,4 @@
     }
 </script>
 <p>{result}</p> 
+<p>{charDesc}</p>
