@@ -1,82 +1,75 @@
 <script>
     import {data} from '../../store';
-    
-    /**
-   * @type {string}
-   */
-    let result
-    /**
-   * @type {string}
-   */
-    let charDesc;
-    console.log("asdf");
+    let charId = -1;
+    const character = [
+        {name:"기사",desc:""},
+        {name:"마왕",desc:""},
+        {name:"마법사",desc:""},
+        {name:"교황",desc:""},
+        {name:"고블린",desc:""},
+        {name:"상인",desc:""},
+        {name:"힐러",desc:""},
+        {name:"귀족",desc:""},
+        {name:"엘프",desc:""},
+        {name:"용사",desc:""},
+        {name:"성직자",desc:""},
+        {name:"성녀",desc:""},
+        {name:"마녀",desc:""},
+        {name:"왕",desc:""},
+        {name:"궁수",desc:""},
+        {name:"암살자",desc:""},
+    ];
     console.log($data);
     switch($data){
         case 'istj':
-            result = "기사";
-            charDesc = "";
+            charId = 0;
             break;
         case 'estj':
-            result = "";
-            charDesc = "";
+            charId = 1;
             break;
         case 'intj':
-            result = "";
-            charDesc = "";
+            charId = 2;
             break;
         case 'entj':
-            result = "";
-            charDesc = "";
+            charId = 3;
             break;
         case 'infj':
-            result = "";
-            charDesc = "";
+            charId = 4;
             break;
         case 'enfj':
-            result = "";
-            charDesc = "";
+            charId = 5;
             break;
         case 'isfj':
-            result = "";
-            charDesc = "";
+            charId = 6;
             break;
         case 'esfj':
-            result = "";
-            charDesc = "";
+            charId = 7;
             break;
         case 'infp':
-            result = "";
-            charDesc = "";
+            charId = 8;
             break;
         case 'enfp':
-            result = "";
-            charDesc = "";
+            charId = 9;
             break;
         case 'isfp':
-            result = "";
-            charDesc = "";
+            charId = 10;
             break;
         case 'esfp':
-            result = "";
-            charDesc = "";
+            charId = 11;
             break;
         case 'intp':
-            result = "";
-            charDesc = "";
+            charId = 12;
             break;
         case 'entp':
-            result = "";
-            charDesc = "";
+            charId = 13;
             break;
         case 'istp':
-            result = "";
-            charDesc = "";
+            charId = 14;
             break;
         case 'estp':
-            result = "";
-            charDesc = "";
+            charId = 15;
             break;
     }
 </script>
-<p>{result}</p> 
-<p>{charDesc}</p>
+<h1>{character[charId].name}</h1>
+<p>{character[charId].desc}</p>
