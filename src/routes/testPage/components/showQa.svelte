@@ -1,9 +1,9 @@
 <script>
     import {createEventDispatcher} from 'svelte'
     export let question = "",ans1 = "",ans2 = "";
-    import {data} from '../../../store'
+    import {mbti} from '../../../store'
     let idx = 0;
-    const userResponse = [0,0,0,0];//[e,n,t,j]
+    const userResponse = [0,0,0,0]; //[e,n,t,j]
     const dispatch = createEventDispatcher();
     /**
    * @type {any[]}
@@ -81,9 +81,8 @@
         for(let i = 0; i<userResponseStr.length; i++){
             result += userResponseStr[i];
         }
-        console.log(result);
-        data.update(()=>result);
-        console.log($data);
+        mbti.set(result);
+        console.log($mbti);
     }
 
     const handleClick = (/** @type {number} */ a)=>{
@@ -93,7 +92,6 @@
             idx++;
         }
     }
-
 </script>
 <div>
     <div>{question}</div>
