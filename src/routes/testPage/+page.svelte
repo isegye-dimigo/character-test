@@ -22,13 +22,14 @@
         ] as const;
         let idx:number = 0;
 </script>
-
-<ProcessBar progress={idx*100/12}/>
-{#if idx>=0 && idx <12}
-<ShowQa on:buttonClick={()=>{idx++;}} question={QaList[idx].question} ans1={QaList[idx].ans1} ans2={QaList[idx].ans2}/>
-{:else}
-<button on:click={()=>{goto('/result')}}>결과보기</button>
-{/if}
-{#if idx<12}
-<p>{idx+1}/12</p>
-{/if}
+<div id="showqa-page">
+    {#if idx>=0 && idx <12}
+        <div>
+            <ProcessBar progress={idx*10}/>
+        </div>
+        <ShowQa on:buttonClick={()=>{idx++;}} question={QaList[idx].question} ans1={QaList[idx].ans1} ans2={QaList[idx].ans2}/>
+        <p>{idx+1}/12</p>
+    {:else}
+        <button on:click={()=>{goto('/result')}}>결과보기</button>
+    {/if}
+</div>
