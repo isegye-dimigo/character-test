@@ -31,5 +31,6 @@
         <p>{idx+1}/12</p>
     {:else}
         <button on:click={()=>{goto('/result')}}>결과보기</button>
+        <div>광고 배너 영역</div>
     {/if}
 </div>

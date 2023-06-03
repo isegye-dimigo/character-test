@@ -1,77 +1,86 @@
 <script lang="ts">
+    import { goto } from "$app/navigation";
     import { mbti } from '../../store';
     import SnsShare from "./SnsShare.svelte";
-    const characters: Record<string, Record<'name' | 'description', string>> = {
+    const characters: Record<string, Record<'name' | 'imageRoute', string>> = {
         'istj': {
             name:"기사",
-            description:""
+            imageRoute:""
         },
         'estj': {
             name:"마왕",
-            description:""
+            imageRoute:""
         },
         'intj': {
             name:"마법사",
-            description:""
+            imageRoute:""
         },
         'entj': {
             name:"귀족",
-            description:""
+            imageRoute:""
         },
         'infj': {
             name:"예언자",
-            description:""
+            imageRoute:""
         },
         'enfj': {
             name:"상인",
-            description:""
+            imageRoute:""
         },
         'isfj': {
             name:"힐러",
-            description:""
+            imageRoute:""
         },
         'esfj': {
             name:"교황",
-            description:""
+            imageRoute:""
         },
         'infp': {
             name:"엘프",
-            description:""
+            imageRoute:""
         },
         'enfp': {
             name:"용사",
-            description:""
+            imageRoute:""
         },
         'isfp': {
             name:"성직자",
-            description:""
+            imageRoute:""
         },
         'esfp': {
             name:"성녀",
-            description:""
+            imageRoute:""
         },
         'intp': {
             name:"마녀",
-            description:""
+            imageRoute:""
         },
         'entp': {
             name:"왕",
-            description:""
+            imageRoute:""
         },
         'istp': {
             name:"암살자",
-            description:""
+            imageRoute:""
         },
         'estp': {
             name:"궁수",
-            description:""
+            imageRoute:""
         },
     };
+    const retest = ()=>{
+        goto('/');
+    }
 </script>
-<p>내가 이세계에 가게된다면?</p>
-<h1>{characters[$mbti].name}</h1>
-<p>{characters[$mbti].description}</p>
-<img src="" alt="">
-<div>
-    <SnsShare/>
+<div id="result-page">
+    <p>내가 이세계에 가게된다면?</p>
+    <h1>{characters[$mbti].name}</h1>
+    <img src={characters[$mbti].imageRoute} alt="이미지 로드에 실패했습니다.">
+    <div>
+        <p>결과를 친구에게 공유해보세요!</p>
+        <SnsShare/>
+    </div>
+    <div>
+        <button on:click={()=>{retest()}}>테스트 다시하기</button>
+    </div>
 </div>
