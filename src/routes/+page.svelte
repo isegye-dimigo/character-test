@@ -1,9 +1,16 @@
 <script lang="ts">
-import { goto } from "$app/navigation";
-const handleClick = ()=>{
-    goto('/testPage');
-}
-let visitorNum = 0;
+    import { onMount } from 'svelte';
+    import { goto } from "$app/navigation";
+    import { getVisitorNum } from '../api/getVisitorNum.cjs';
+    let visitorNum = 0;
+    onMount(async ()=>{
+        const data = await getVisitorNum();
+        console.log(data);
+        visitorNum = parseInt(data);
+    })
+    const handleClick = ()=>{
+        goto('/testPage');
+    }
 </script>
 <div id="first-page">
     <div id="title">
