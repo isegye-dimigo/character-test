@@ -1,6 +1,7 @@
 export async function getVisitorNum(){
     return await fetch('http://localhost:3000/api/getVisitorNum',{
         method: 'POST',
+        credentials: 'include',
         headers:{
             'Content-Type':'text/plain'
         }
