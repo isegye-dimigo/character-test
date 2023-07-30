@@ -76,3 +76,15 @@ div#result-page{
         font-size: 2.5rem;
     }
 }
+
+/*SnsShare*/
+div#result-share-sns>a>img{
+    width: 2rem;
+    margin: 0.5rem;
+}
+
+div#result-share-sns{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

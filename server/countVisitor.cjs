@@ -32,9 +32,8 @@ connection.connect((error)=>{
 });
 
 app.post('/api/getVisitorNum',(req,res)=>{
-    console.log("a");
     let visitorNum;
-    if(req.headers.cookie){
+    if(!req.headers.cookie){
         connection.query("INSERT INTO visitor_cnt (date) VALUES (NOW());",(error)=>{
             if(error){
                 console.error(error);
@@ -44,14 +43,17 @@ app.post('/api/getVisitorNum',(req,res)=>{
             res.cookie('visited', 'true', {
                 maxAge: 1000 * 60 * 60,
                 path: '/',
-                // httpOnly: true
+                sameSite: 'Lax',
+                domain: '.127.0.0.1',
+            },()=>{
+                console.log("쿠키 생성 완료");
+                console.log(req.headers['cookie']);
             });
-            console.log("쿠키 생성 완료");
+            
         });
     }else{
-        console.log("여기다");
+        console.log(req.headers['cookie']);
     }
-    //
     connection.query("SELECT * FROM visitor_cnt ORDER BY id DESC LIMIT 1;",(error,rows)=>{
         if(error) throw error;
         visitorNum = rows[0].id;

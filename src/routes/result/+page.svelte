@@ -78,7 +78,9 @@
     <img src={characters[$mbti].imageRoute} alt="이미지 로드에 실패했습니다.">
     <div>
         <p>결과를 친구에게 공유해보세요!</p>
-        <SnsShare/>
+        <div id="result-share-sns">
+            <SnsShare/>
+        </div>
     </div>
     <div>
         <button on:click={()=>{retest()}}>테스트 다시하기</button>

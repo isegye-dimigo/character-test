@@ -3,11 +3,11 @@
     import { goto } from "$app/navigation";
     import { getVisitorNum } from '../api/getVisitorNum.cjs';
     let visitorNum = 0;
-    onMount(async ()=>{
-        const data = await getVisitorNum();
-        console.log(data);
-        visitorNum = parseInt(data);
-    })
+    // onMount(async ()=>{
+    //     const data = await getVis    itorNum();
+    //     console.log(data);
+    //     visitorNum = parseInt(data);
+    // })
     const handleClick = ()=>{
         goto('/testPage');
     }
@@ -22,5 +22,5 @@
 </div>
 
 <style>
-    @import '../static/style/global.css';
+    @import '../../static/style/global.css';
 </style>
