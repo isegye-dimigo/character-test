@@ -1,13 +1,24 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
     import { goto } from "$app/navigation";
-    import { getVisitorNum } from '../api/getVisitorNum.cjs';
+    import { onMount } from "svelte";
     let visitorNum = 0;
-    // onMount(async ()=>{
-    //     const data = await getVis    itorNum();
-    //     console.log(data);
-    //     visitorNum = parseInt(data);
-    // })
+    let res;
+    async function getVisitorNum() {
+        const response = await fetch("/api", {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            credentials: 'include'
+        });
+        res =  await response.json();
+        console.log(res[0].id);
+        visitorNum = res[0].id;
+    }
+
+    onMount(async ()=>{
+        let result = await getVisitorNum();
+    })
     const handleClick = ()=>{
         goto('/testPage');
     }
