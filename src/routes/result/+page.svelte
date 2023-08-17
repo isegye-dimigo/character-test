@@ -5,67 +5,67 @@
     const characters: Record<string, Record<'name' | 'imageRoute', string>> = {
         'istj': {
             name:"기사",
-            imageRoute:""
+            imageRoute:"/img/istj"
         },
         'estj': {
             name:"마왕",
-            imageRoute:""
+            imageRoute:"/img/estj"
         },
         'intj': {
             name:"마법사",
-            imageRoute:""
+            imageRoute:"/img/intj"
         },
         'entj': {
             name:"귀족",
-            imageRoute:""
+            imageRoute:"/img/entj"
         },
         'infj': {
             name:"예언자",
-            imageRoute:""
+            imageRoute:"/img/infj"
         },
         'enfj': {
             name:"상인",
-            imageRoute:""
+            imageRoute:"/img/enfj"
         },
         'isfj': {
             name:"힐러",
-            imageRoute:""
+            imageRoute:"/img/isfj"
         },
         'esfj': {
             name:"교황",
-            imageRoute:""
+            imageRoute:"/img/esfj"
         },
         'infp': {
             name:"엘프",
-            imageRoute:""
+            imageRoute:"/img/infp"
         },
         'enfp': {
             name:"용사",
-            imageRoute:""
+            imageRoute:"/img/enfp"
         },
         'isfp': {
             name:"성직자",
-            imageRoute:""
+            imageRoute:"/img/isfp"
         },
         'esfp': {
             name:"성녀",
-            imageRoute:""
+            imageRoute:"/img/esfp"
         },
         'intp': {
             name:"마녀",
-            imageRoute:""
+            imageRoute:"/img/intp"
         },
         'entp': {
             name:"왕",
-            imageRoute:""
+            imageRoute:"/img/entp"
         },
         'istp': {
             name:"암살자",
-            imageRoute:""
+            imageRoute:"/img/istp"
         },
         'estp': {
             name:"궁수",
-            imageRoute:""
+            imageRoute:"/img/estp"
         },
     };
     const retest = ()=>{
@@ -75,7 +75,7 @@
 <div id="result-page">
     <p>내가 이세계에 가게된다면?</p>
     <h1>{characters[$mbti].name}</h1>
-    <img src={characters[$mbti].imageRoute} alt="이미지 로드에 실패했습니다.">
+    <img src={characters[$mbti].imageRoute} alt='이미지로드에 실패했습니다'>
     <div>
         <p>결과를 친구에게 공유해보세요!</p>
         <div id="result-share-sns">

@@ -10,11 +10,11 @@ let mysqlconn = null;
 export function mysqlconnFn() {
     if (!mysqlconn) {
         mysqlconn = mysql.createConnection({
-        host: process.env.HOST,
-        user: process.env.USER, 
-        password: process.env.PASSWORD,
-        database: process.env.DATABASE,
-    });
-}
-return mysqlconn;
+            host: process.env.HOST,
+            user: process.env.USER, 
+            password: process.env.PASSWORD,
+            database: process.env.DATABASE,
+        });
+    }
+    return mysqlconn;
 }

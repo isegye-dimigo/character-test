@@ -12,8 +12,8 @@
             credentials: 'include'
         });
         res =  await response.json();
-        console.log(res[0].id);
-        visitorNum = res[0].id;
+        console.log(res);
+        visitorNum = res;
     }
 
     onMount(async ()=>{
