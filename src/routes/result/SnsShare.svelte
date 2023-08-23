@@ -13,5 +13,5 @@
 </script>
 
 <a href="javascript:none" on:click={()=>{shareImgToFacebook()}}><img src="/img/facebook-color.svg" alt="facebook공유"></a>
-<a href="javascript:none" on:click={()=>{copyUrl('localhost:5173/result/'+$mbti)}}><img src="/img/link.svg" alt="url복사"></a>
+<a href="javascript:none" on:click={()=>{copyUrl(window.location.href+$mbti)}}><img src="/img/link.svg" alt="url복사"></a>
 <a href={imgUrl} download><img src="/img/download_img.svg" alt="이미지 저장"></a>
