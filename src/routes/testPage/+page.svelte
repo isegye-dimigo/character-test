@@ -1,9 +1,10 @@
 <script lang="ts">
     import { goto } from '$app/navigation';
-    import {QaList} from '../../store'
+    import {QaList} from '../../store';
     import ShowQa from "./ShowQa.svelte";
 
-    let questionIdx:number = 0;
+    let questionIdx = 0;
+    let resultLinkUrl = 'result/intp';
 </script>
 <div id="showqa-page">
     {#if questionIdx>=0 && questionIdx<12}
@@ -17,3 +18,6 @@
         <div>광고 배너 영역</div>
     {/if}
 </div>
+<style>
+    @import '../../../static/style/global.css';
+</style>

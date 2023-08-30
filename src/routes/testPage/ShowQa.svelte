@@ -40,7 +40,7 @@
             culUserResponse();
         }
     }
-    const culUserResponse = ()=>{
+    const culUserResponse = () => {
         for(let i = 0; i<userResponseCounter.length; i++){
             if(userResponseCounter[i]>=2){
                 switch(i){

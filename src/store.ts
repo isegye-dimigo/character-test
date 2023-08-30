@@ -19,72 +19,98 @@ export const QaList = [
     {question:'영화 보기전 팝콘을 주문할 때 나의 모습은?',ans1:'나는 카라멜이나 치즈팝콘 먹으니까 오늘은 치즈팝콘 먹어야겠다',ans2:'맨날 팝콘만 먹으니까 좀 질리는거같아.. 오늘은 팝콘 말고 버터구이 오징어 먹어볼까?'},
     {question:'조조 영화를 보러 갈 때 나의 모습은?',ans1:'지금 영화시작 30분 전이니까 이제 나가면 여유롭겠지?',ans2:'헉... 영화시작 30분 남았는데 지금 일어났다.. 그냥 예매 취소하고 오후꺼 봐야지'},
     {question:'영화가 시작되기전 광고시간에 나의 모습은?',ans1:'혹시 모르니 미리 화장실 다녀와야겠다',ans2:'언제 시작하지..팝콘 맛있당'},
-    ] as const;
+] as const;
 
+const codeList = ['1w8gse', 'yfjx9p', 'v3hzbr', 'qcktn7', 'dmwla4', 'spkb5o', 'i0eu6r', 'hn2tyl', '5r4ipg', 'lmtv3d', '9ab7wz', '8vrtxj', 'fxslny', '3c0pge', 'rd7jyx', '2iwp6n'] as const;
+const mbtiList = ['istj','estj','intj','entj','infj','enfj','isfj','esfj','infp','enfp','isfp','esfp','intp','entp','istp','estp'];
 
-export const mbtiCharacters: Record<string, Record<'name' | 'imageRoute', string>> = {
+export const convertMbtiCodeToString = (code:string)=>{
+    for(let i = 0; i<codeList.length; i++){
+        if(codeList[i] == code){
+            return mbtiList[i];
+        }
+    }
+}
+
+export const mbtiCharacters: Record<string, Record<'name' | 'imageRoute' |'code' , string>> = {
     'istj': {
         name:"기사",
-        imageRoute:"/img/istj"
+        imageRoute:"/img/istj",
+        code: codeList[0],
     },
     'estj': {
         name:"마왕",
-        imageRoute:"/img/estj"
+        imageRoute:"/img/estj",
+        code: codeList[1],
     },
     'intj': {
         name:"마법사",
-        imageRoute:"/img/intj"
+        imageRoute:"/img/intj",
+        code: codeList[2],
     },
     'entj': {
         name:"귀족",
-        imageRoute:"/img/entj"
+        imageRoute:"/img/entj",
+        code: codeList[3],
     },
     'infj': {
         name:"예언자",
-        imageRoute:"/img/infj"
+        imageRoute:"/img/infj",
+        code: codeList[4],
     },
     'enfj': {
         name:"상인",
-        imageRoute:"/img/enfj"
+        imageRoute:"/img/enfj",
+        code: codeList[5],
     },
     'isfj': {
         name:"힐러",
-        imageRoute:"/img/isfj"
+        imageRoute:"/img/isfj",
+        code: codeList[6],
     },
     'esfj': {
         name:"교황",
-        imageRoute:"/img/esfj"
+        imageRoute:"/img/esfj",
+        code: codeList[7],
     },
     'infp': {
         name:"엘프",
-        imageRoute:"/img/infp"
+        imageRoute:"/img/infp",
+        code: codeList[8],
     },
     'enfp': {
         name:"용사",
-        imageRoute:"/img/enfp"
+        imageRoute:"/img/enfp",
+        code: codeList[9],
     },
     'isfp': {
         name:"성직자",
-        imageRoute:"/img/isfp"
+        imageRoute:"/img/isfp",
+        code: codeList[10],
     },
     'esfp': {
         name:"성녀",
-        imageRoute:"/img/esfp"
+        imageRoute:"/img/esfp",
+        code: codeList[11],
     },
     'intp': {
         name:"마녀",
-        imageRoute:"/img/intp"
+        imageRoute:"/img/intp",
+        code: codeList[12],
     },
     'entp': {
         name:"왕",
-        imageRoute:"/img/entp"
+        imageRoute:"/img/entp",
+        code: codeList[13],
     },
     'istp': {
         name:"암살자",
-        imageRoute:"/img/istp"
+        imageRoute:"/img/istp",
+        code: codeList[14],
     },
     'estp': {
         name:"궁수",
-        imageRoute:"/img/estp"
+        imageRoute:"/img/estp",
+        code: codeList[15],
     },
 };
